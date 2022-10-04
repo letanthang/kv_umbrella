@@ -17,6 +17,7 @@ defmodule KVServerTest do
   test "greets the world" do
     assert KVServer.hello() == :world
   end
+  @tag :distributed
 
   test "server interaction", %{socket: socket} do
     assert send_and_recv(socket, "UNKNOWN shopping\r\n") == "UNKOWN COMMAND\r\n"
