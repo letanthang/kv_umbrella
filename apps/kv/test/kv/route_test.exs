@@ -6,9 +6,8 @@ defmodule KV.RouterTest do
 
     Application.put_env(:kv, :routing_table, [
       {?a..?m, :"foo@computer-name"},
-      {?n..?z, :"bar@computer-name"}
-
-      on_exit fn -> Application.put_env(:kv, :routing_table, current)
+      {?n..?z, :"bar@computer-name"},
+      on_exit(fn -> Application.put_env(:kv, :routing_table, current) end)
     ])
   end
 
